@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Glossy Car Foam Wash</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #b91c1c;
+    --red-light: #dc2626;
+    --red-pale: #fef2f2;
+    --yellow: #f59e0b;
+    --yellow-pale: #fffbeb;
+    --white: #ffffff;
+    --grey-50: #f9fafb;
+    --grey-100: #f3f4f6;
+    --grey-200: #e5e7eb;
+    --grey-400: #9ca3af;
+    --grey-600: #4b5563;
+    --grey-800: #1f2937;
+    --grey-900: #111827;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.10), 0 3px 8px rgba(0,0,0,0.05);
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--grey-800);
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─────────────────────────────────────────────── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--grey-200);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--red) 0%, #7f1d1d 100%);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(185,28,28,0.3);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo-icon::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.18), transparent);
+    border-radius: 9px 9px 0 0;
+  }
+
+  .logo-icon svg { position: relative; z-index: 1; }
+
+  .logo-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--grey-900);
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+  }
+
+  .logo-text span { color: var(--red); }
+
+  nav { display: flex; gap: 4px; }
+
+  nav a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--grey-600);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  nav a:hover { color: var(--red); background: var(--red-pale); }
+  nav a.active { color: var(--red); font-weight: 600; }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: var(--grey-800);
+  }
+
+  /* ─── HERO ──────────────────────────────────────────────────── */
+  #home {
+    background: linear-gradient(160deg, #fff 0%, #fef2f2 45%, #fff7ed 100%);
+    padding: 72px 24px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #home::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(185,28,28,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  #home::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--yellow-pale);
+    border: 1px solid #fde68a;
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #92400e;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .hero-badge-dot {
+    width: 7px; height: 7px;
+    background: var(--yellow);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 700;
+    color: var(--grey-900);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  h1 .highlight { color: var(--red); }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--grey-600);
+    font-weight: 300;
+    margin-bottom: 22px;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .rating-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--white);
+    border: 1px solid var(--grey-200);
+    border-radius: 100px;
+    padding: 5px 13px;
+    box-shadow: var(--shadow-sm);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--grey-700);
+  }
+
+  .stars { color: var(--yellow); font-size: 13px; letter-spacing: 1px; }
+  .rating-num { font-weight: 700; color: var(--grey-900); }
+  .rating-count { color: var(--grey-400); font-size: 12px; }
+
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--white);
+    border: 1px solid var(--grey-200);
+    border-radius: 100px;
+    padding: 5px 13px;
+    box-shadow: var(--shadow-sm);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--grey-700);
+  }
+
+  .status-dot {
+    width: 8px; height: 8px;
+    background: #16a34a;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 2px rgba(22,163,74,0.2);
+  }
+
+  /* ─── BUTTONS ────────────────────────────────────────────────── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(160deg, var(--red-light) 0%, var(--red) 100%);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(185,28,28,0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+    transition: transform 0.18s, box-shadow 0.18s, filter 0.18s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.14), transparent);
+    border-radius: 100px 100px 0 0;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(185,28,28,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+    filter: brightness(1.05);
+  }
+
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--red);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 100px;
+    border: 1.5px solid var(--red);
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.18s, background 0.18s, color 0.18s;
+  }
+
+  .btn-outline:hover {
+    background: var(--red);
+    color: var(--white);
+    transform: translateY(-1px);
+  }
+
+  /* ─── SECTION WRAPPER ───────────────────────────────────────── */
+  .section {
+    padding: 72px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-alt {
+    background: var(--grey-50);
+    border-top: 1px solid var(--grey-100);
+    border-bottom: 1px solid var(--grey-100);
+  }
+
+  .section-alt .section { /* keep max-width inside alt bg */ }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(22px, 3.5vw, 30px);
+    font-weight: 700;
+    color: var(--grey-900);
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+
+  .section-sub {
+    font-size: 14px;
+    color: var(--grey-400);
+    margin-bottom: 40px;
+  }
+
+  /* ─── SERVICE CARDS GRID ─────────────────────────────────────── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--radius);
+    padding: 24px 22px 22px;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* glossy shine on top */
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 42%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.7), transparent);
+    pointer-events: none;
+    z-index: 1;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(185,28,28,0.2);
+  }
+
+  .card-icon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--red-pale), #fecaca);
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(185,28,28,0.12);
+  }
+
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--grey-900);
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--grey-400);
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-arrow {
+    margin-top: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    z-index: 2;
+    transition: gap 0.2s;
+  }
+
+  .service-card:hover .card-arrow { gap: 8px; }
+
+  /* ─── SERVICE DETAIL PANEL ───────────────────────────────────── */
+  #service-detail {
+    display: none;
+    background: var(--white);
+  }
+
+  #service-detail.open { display: block; }
+
+  .detail-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+
+  .detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--grey-400);
+    cursor: pointer;
+    margin-bottom: 28px;
+    transition: color 0.18s;
+    border: none;
+    background: none;
+  }
+
+  .detail-back:hover { color: var(--red); }
+
+  .detail-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .detail-title-block {}
+  .detail-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--red-pale), #fecaca);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 3px 10px rgba(185,28,28,0.12);
+  }
+
+  .detail-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--grey-900);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+
+  .detail-desc {
+    font-size: 14px;
+    color: var(--grey-600);
+    max-width: 540px;
+    line-height: 1.7;
+  }
+
+  /* image placeholders */
+  .img-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin: 28px 0;
+  }
+
+  .img-placeholder {
+    aspect-ratio: 4/3;
+    background: linear-gradient(160deg, var(--grey-100) 0%, var(--grey-50) 100%);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--grey-400);
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .img-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.65), transparent);
+    pointer-events: none;
+  }
+
+  .img-placeholder svg { opacity: 0.35; }
+
+  .feature-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+    margin: 22px 0 32px;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 14px;
+    color: var(--grey-700);
+  }
+
+  .feature-list li::before {
+    content: '';
+    width: 18px; height: 18px;
+    background: var(--red-pale);
+    border-radius: 50%;
+    display: flex;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8l3.5 3.5L13 4.5' stroke='%23b91c1c' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* ─── REVIEWS ───────────────────────────────────────────────── */
+  .reviews-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+
+  .big-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--radius);
+    padding: 24px 32px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .big-rating::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.75), transparent);
+    pointer-events: none;
+  }
+
+  .big-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--grey-900);
+    line-height: 1;
+    position: relative; z-index: 1;
+  }
+
+  .big-stars { font-size: 18px; color: var(--yellow); margin: 6px 0 4px; position: relative; z-index: 1; }
+  .big-count { font-size: 12px; color: var(--grey-400); position: relative; z-index: 1; }
+
+  .reviews-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .review-card {
+    background: var(--white);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .review-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+    pointer-events: none;
+  }
+
+  .review-stars { font-size: 13px; color: var(--yellow); margin-bottom: 9px; }
+
+  .review-text {
+    font-size: 13.5px;
+    color: var(--grey-600);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .reviewer-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+
+  .reviewer-name { font-size: 13px; font-weight: 600; color: var(--grey-800); }
+  .reviewer-date { font-size: 11px; color: var(--grey-400); }
+
+  /* ─── CONTACT ───────────────────────────────────────────────── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  @media (max-width: 680px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  .contact-card {
+    background: var(--white);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.65), transparent);
+    pointer-events: none;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--grey-100);
+    position: relative; z-index: 1;
+  }
+
+  .contact-row:last-of-type { border-bottom: none; }
+
+  .contact-icon {
+    width: 38px; height: 38px;
+    background: var(--red-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 17px;
+  }
+
+  .contact-label { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grey-400); margin-bottom: 2px; }
+  .contact-value { font-size: 14px; color: var(--grey-800); font-weight: 500; line-height: 1.5; }
+
+  .call-block {
+    padding-top: 20px;
+    position: relative; z-index: 1;
+  }
+
+  /* map placeholder */
+  .map-placeholder {
+    aspect-ratio: 4/3;
+    background: linear-gradient(160deg, #e9eff5 0%, #dce6ee 100%);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--grey-400);
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .map-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.45), transparent);
+    pointer-events: none;
+  }
+
+  .map-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.12;
+    background-image:
+      linear-gradient(var(--grey-600) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grey-600) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .map-pin { font-size: 32px; position: relative; z-index: 1; }
+  .map-label { position: relative; z-index: 1; }
+
+  /* ─── FOOTER ──────────────────────────────────────────────── */
+  footer {
+    background: var(--grey-900);
+    color: var(--grey-400);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 13px;
+  }
+
+  footer strong { color: var(--white); }
+  footer span { color: var(--red); }
+
+  /* ─── DIVIDER ─────────────────────────────────────────────── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--grey-200) 20%, var(--grey-200) 80%, transparent);
+    margin: 0 24px;
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    nav { display: none; }
+    nav.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 62px; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-200);
+      padding: 12px 20px;
+      box-shadow: var(--shadow-md);
+    }
+    .nav-toggle { display: flex; }
+    .header-inner { position: relative; }
+    .reviews-header { flex-direction: column; }
+    .big-rating { width: 100%; }
+  }
+
+  /* ─── UTILS ──────────────────────────────────────────────── */
+  .text-center { text-align: center; }
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#home">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 12c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v4H3v-4z" fill="rgba(255,255,255,0.9)"/>
+          <circle cx="7" cy="17" r="2" fill="rgba(255,255,255,0.9)"/>
+          <circle cx="17" cy="17" r="2" fill="rgba(255,255,255,0.9)"/>
+          <path d="M5 10l2-5h10l2 5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M3 14h18" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="logo-text">GLOSSY<br/><span>CAR FOAM WASH</span></div>
+    </a>
+
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <nav>
+      <a href="#home" class="active" onclick="showSection('home')">Home</a>
+      <a href="#services" onclick="showSection('services')">Services</a>
+      <a href="#contact" onclick="showSection('contact')">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══ HERO ════════════════════════════════════════════════════ -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Professional Car Care · Miyapur, Hyderabad
+    </div>
+
+    <h1>GLOSSY <span class="highlight">CAR</span><br/>FOAM WASH</h1>
+    <p class="hero-sub">Smooth &amp; Professional Car Care</p>
+
+    <div class="hero-meta">
+      <div class="rating-pill">
+        <span class="stars">★★★★★</span>
+        <span class="rating-num">5.0</span>
+        <span class="rating-count">(3 reviews)</span>
+      </div>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        Open · Closes 10 PM
+      </div>
+    </div>
+
+    <a class="btn-primary" href="tel:07330752590">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      Call Now
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ SERVICES SECTION ════════════════════════════════════════ -->
+<div class="section-alt">
+<div class="section" id="services">
+  <div class="section-label">What We Offer</div>
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">Tap any service to learn more</p>
+
+  <div class="services-grid">
+
+    <div class="service-card" onclick="openDetail('air-freshener')">
+      <div class="card-icon">🌿</div>
+      <div class="card-title">Air-Freshener Treatment</div>
+      <div class="card-desc">Long-lasting interior fragrance for a fresh cabin feel.</div>
+      <div class="card-arrow">View Details →</div>
+    </div>
+
+    <div class="service-card" onclick="openDetail('auto-detailing')">
+      <div class="card-icon">✨</div>
+      <div class="card-title">Auto Detailing</div>
+      <div class="card-desc">Deep clean inside and out for a showroom-ready finish.</div>
+      <div class="card-arrow">View Details →</div>
+    </div>
+
+    <div class="service-card" onclick="openDetail('auto-washing')">
+      <div class="card-icon">🚗</div>
+      <div class="card-title">Automatic Car Washing</div>
+      <div class="card-desc">Quick, touchless exterior wash with premium foam.</div>
+      <div class="card-arrow">View Details →</div>
+    </div>
+
+    <div class="service-card" onclick="openDetail('car-polishing')">
+      <div class="card-icon">💫</div>
+      <div class="card-title">Car Polishing</div>
+      <div class="card-desc">Restore paint gloss and remove light surface scratches.</div>
+      <div class="card-arrow">View Details →</div>
+    </div>
+
+    <div class="service-card" onclick="openDetail('car-waxing')">
+      <div class="card-icon">🛡️</div>
+      <div class="card-title">Car Waxing</div>
+      <div class="card-desc">Protective wax coat for a brilliant, glossy shield.</div>
+      <div class="card-arrow">View Details →</div>
+    </div>
+
+    <div class="service-card" onclick="openDetail('window-cleaning')">
+      <div class="card-icon">🪟</div>
+      <div class="card-title">Car Window Cleaning</div>
+      <div class="card-desc">Crystal-clear glass treatment inside and out.</div>
+      <div class="card-arrow">View Details →</div>
+    </div>
+
+    <div class="service-card" onclick="openDetail('vacuuming')">
+      <div class="card-icon">🌀</div>
+      <div class="card-title">Vehicle Interior Vacuuming</div>
+      <div class="card-desc">Complete interior deep vacuum for a spotless cabin.</div>
+      <div class="card-arrow">View Details →</div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- ══ SERVICE DETAIL ══════════════════════════════════════════ -->
+<div id="service-detail">
+  <div class="detail-inner">
+    <button class="detail-back" onclick="closeDetail()">
+      ← Back to Services
+    </button>
+
+    <div class="detail-icon" id="d-icon">✨</div>
+    <div class="detail-title" id="d-title">Auto Detailing</div>
+    <p class="detail-desc" id="d-desc">A comprehensive deep-clean service covering every surface of your vehicle, delivering a flawless showroom-ready result inside and out.</p>
+
+    <div class="img-row">
+      <div class="img-placeholder">
+        <div class="map-grid"></div>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span>Image 1</span>
+      </div>
+      <div class="img-placeholder">
+        <div class="map-grid"></div>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span>Image 2</span>
+      </div>
+      <div class="img-placeholder">
+        <div class="map-grid"></div>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span>Image 3</span>
+      </div>
+    </div>
+
+    <div class="section-label">What's Included</div>
+    <ul class="feature-list" id="d-features">
+      <li>Exterior hand wash &amp; rinse</li>
+      <li>Interior wipe-down</li>
+      <li>Wheel &amp; tyre cleaning</li>
+      <li>Door jam cleaning</li>
+      <li>Dashboard conditioning</li>
+      <li>Premium foam treatment</li>
+    </ul>
+
+    <a class="btn-primary" href="tel:07330752590">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      Call Now · 073307 52590
+    </a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ REVIEWS ════════════════════════════════════════════════ -->
+<div class="section" id="reviews">
+  <div class="section-label">Customer Reviews</div>
+  <h2 class="section-title">What People Say</h2>
+  <p class="section-sub" style="margin-bottom:28px;">Rated 5.0 out of 5 · 3 reviews</p>
+
+  <div class="reviews-header">
+    <div class="big-rating">
+      <div class="big-num">5.0</div>
+      <div class="big-stars">★★★★★</div>
+      <div class="big-count">3 Reviews</div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Amazing service! My car looks brand new after the full detailing. The foam wash was incredibly thorough."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background: linear-gradient(135deg, #b91c1c, #7f1d1d);">R</div>
+          <div>
+            <div class="reviewer-name">Ravi Kumar</div>
+            <div class="reviewer-date">2 weeks ago</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Very professional team. The waxing and polishing gave my car a mirror-like shine. Highly recommended!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background: linear-gradient(135deg, #0369a1, #075985);">P</div>
+          <div>
+            <div class="reviewer-name">Priya Reddy</div>
+            <div class="reviewer-date">1 month ago</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best car wash in Miyapur! The interior vacuuming and air freshener treatment were on another level. Great value."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background: linear-gradient(135deg, #059669, #065f46);">S</div>
+          <div>
+            <div class="reviewer-name">Suresh Naidu</div>
+            <div class="reviewer-date">2 months ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ CONTACT ════════════════════════════════════════════════ -->
+<div class="section-alt">
+<div class="section" id="contact">
+  <div class="section-label">Find Us</div>
+  <h2 class="section-title">Contact &amp; Location</h2>
+  <p class="section-sub">We're open daily · Closes 10 PM</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-value">Prasanth Nagar, Miyapur<br/>Hyderabad, Telangana – 500049</div>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">073307 52590</div>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="contact-label">Hours</div>
+          <div class="contact-value">Open Daily · Closes 10 PM</div>
+        </div>
+      </div>
+
+      <div class="call-block">
+        <a class="btn-primary" href="tel:07330752590" style="width:100%;justify-content:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          Call Now · 073307 52590
+        </a>
+      </div>
+    </div>
+
+    <!-- Map Placeholder -->
+    <div class="map-placeholder" onclick="window.open('https://maps.google.com?q=Prasanth+Nagar+Miyapur+Hyderabad','_blank')">
+      <div class="map-grid"></div>
+      <div class="map-pin">📍</div>
+      <div class="map-label">Prasanth Nagar, Miyapur</div>
+      <div style="font-size:12px;color:var(--grey-400);position:relative;z-index:1;">Click to open in Maps</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <strong>GLOSSY <span>CAR FOAM WASH</span></strong><br/>
+  <span style="color:var(--grey-600);font-size:12px;">Prasanth Nagar, Miyapur, Hyderabad · 073307 52590 · Open Daily till 10 PM</span><br/>
+  <span style="font-size:11px;color:var(--grey-600);margin-top:6px;display:block;">© 2025 Glossy Car Foam Wash. All rights reserved.</span>
+</footer>
+
+<!-- ══ JS ════════════════════════════════════════════════════ -->
+<script>
+const services = {
+  'air-freshener': {
+    icon: '🌿',
+    title: 'Air-Freshener Treatment',
+    desc: 'Our premium air-freshener treatment eliminates odours and infuses your cabin with a long-lasting, pleasant fragrance that keeps your car smelling fresh every drive.',
+    features: ['Odour elimination', 'Long-lasting fragrance', 'Safe for all fabrics', 'Multiple scent options', 'Quick application', 'Eco-friendly formula']
+  },
+  'auto-detailing': {
+    icon: '✨',
+    title: 'Auto Detailing',
+    desc: 'A comprehensive deep-clean service covering every surface of your vehicle — delivering a flawless, showroom-ready result inside and out with expert precision.',
+    features: ['Full exterior hand wash', 'Interior surface wipe-down', 'Wheel & tyre detailing', 'Door jam cleaning', 'Dashboard conditioning', 'Premium foam application']
+  },
+  'auto-washing': {
+    icon: '🚗',
+    title: 'Automatic Car Washing',
+    desc: 'Our high-pressure foam wash system delivers a quick, thorough exterior clean — removing dirt, grime, and road residue without scratching your car\'s surface.',
+    features: ['High-pressure foam rinse', 'Touchless exterior wash', 'Undercarriage rinse', 'Spot-free drying', 'Eco-friendly detergents', 'Safe for all paint types']
+  },
+  'car-polishing': {
+    icon: '💫',
+    title: 'Car Polishing',
+    desc: 'Our professional polishing service removes light swirls, oxidation, and minor scratches — restoring a deep, vibrant gloss to your vehicle\'s paint finish.',
+    features: ['Machine polishing', 'Swirl & scratch removal', 'Paint oxidation treatment', 'Gloss restoration', 'Multi-stage correction', 'Paint-safe process']
+  },
+  'car-waxing': {
+    icon: '🛡️',
+    title: 'Car Waxing',
+    desc: 'Protect and shine your car\'s exterior with our premium wax coat — creating a brilliant gloss layer that repels water, UV rays, and environmental contaminants.',
+    features: ['Premium carnauba wax', 'UV protection layer', 'Hydrophobic coating', 'Brilliant shine finish', 'Lasts up to 3 months', 'Hand-applied for precision']
+  },
+  'window-cleaning': {
+    icon: '🪟',
+    title: 'Car Window Cleaning',
+    desc: 'Achieve crystal-clear visibility with our streak-free window treatment — cleaned meticulously on both sides using professional glass solutions.',
+    features: ['Inside & outside cleaning', 'Streak-free finish', 'Anti-glare treatment', 'Rain-repellent coating', 'Windscreen deep clean', 'Safe for tinted glass']
+  },
+  'vacuuming': {
+    icon: '🌀',
+    title: 'Vehicle Interior Vacuuming',
+    desc: 'Our complete interior vacuum service removes dust, debris, and dirt from every corner — seats, mats, boot, and crevices — leaving your cabin immaculate.',
+    features: ['Full cabin vacuuming', 'Seat & mat cleaning', 'Boot area cleaning', 'Crevice tool detailing', 'Air vent dust removal', 'Pet hair extraction']
+  }
+};
+
+function openDetail(id) {
+  const s = services[id];
+  if (!s) return;
+  document.getElementById('d-icon').textContent = s.icon;
+  document.getElementById('d-title').textContent = s.title;
+  document.getElementById('d-desc').textContent = s.desc;
+  const fl = document.getElementById('d-features');
+  fl.innerHTML = s.features.map(f => `<li>${f}</li>`).join('');
+
+  document.getElementById('service-detail').classList.add('open');
+  document.getElementById('service-detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function closeDetail() {
+  document.getElementById('service-detail').classList.remove('open');
+  document.getElementById('services').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function showSection(id) {
+  // close detail if open
+  document.getElementById('service-detail').classList.remove('open');
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // update active nav
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+  });
+  // close mobile nav
+  document.querySelector('nav').classList.remove('open');
+}
+
+// Highlight nav on scroll
+const sections = ['home','services','reviews','contact'];
+window.addEventListener('scroll', () => {
+  let current = 'home';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 80) current = id;
+  });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
